@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#logoTop {
+  height: 30px;
+  width: 231.2;
+  padding-left: 9%;
+}
+
+li {
+  list-style: none;
+}
+a,
+a:visited {
+  color: #DEDEDE;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+}
+
+/**** NAVBAR ****/
+nav {
+  background: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  position: fixed;
+  width: 100%;
+  position: fixed;
+  z-index: 1002; /* Plus haut que le voile */
+  border-bottom: 1px solid #777777;
+}
+nav ul {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  gap: 52px;
+  padding-right: 9%;
+}
+
+#icons {
+  cursor: pointer;
+  display: none;
+  color: rgb(255, 255, 255);
+}
+
+/* Wrapper pour contenir la largeur max */
+#hero-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Image de couverture */
+
+#citation {
+  margin-top: 15%;
+}
+
+#citation h1 {
+  font-size: 34px;
+  margin-top: 42px;
+}
+
+#hero {
+  background: url('img/background2.png') center/cover no-repeat;
+  width: 100%;
+  max-width: 100vw; /* Ne dépasse jamais la largeur de l'écran */
+  height: 100vh; /* Ajustable selon tes besoins */
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 20px;
+  overflow: hidden; /* Empêche tout débordement */
+  font-family: "EB Garamond", serif;
+  font-size: 40px;
+}
+
+
+/* Petit texte blanc au centre */
+#hero p {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+
+/* Menu burger */
+nav ul {
+  position: relative;
+  z-index: 1003; /* Encore plus haut pour être visible */
+}
+
+/* Voile noir qui NE RECOUVRE PAS la navbar et ul */
+#fullscreen-overlay {
+  position: fixed;
+  top: 60px; /* Commence JUSTE sous la navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px); /* Prend tout sauf la navbar */
+  background: rgba(0, 0, 0, 0.96); /* 96% d'opacité */
+  z-index: 1001; /* En dessous de la navbar et du menu */
+  display: none; /* Caché par défaut */
+}
+
+/* Affichage du voile quand le menu est actif */
+nav.active ~ #fullscreen-overlay {
+  display: block;
+}
+
+/* Section Qui suis-je */
+#quisuisje, #acheter {
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+  padding: 40px 0;
+}
+
+/* Titre */
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+/* Contenu en flexbox */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Image à gauche, texte à droite */
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  padding-left: 9%;
+}
+
+/* Image de Corinne (fixée à gauche) */
+.profile-img {
+  height: 695px;
+  width: 350px;
+  object-fit: cover; /* Assure le bon affichage de l'image */
+  flex-shrink: 0; /* Empêche l'image de rétrécir */
+}
+
+/* Texte + icône */
+.txt {
+  max-width: 784px;
+  font-weight: bolder;
+  flex-grow: 1;
+  padding-left: 35px;
+  text-align: justify;
+  font-size: 20px;
+  padding-right: 10%;
+  width: 784px;
+}
+
+.txt p {
+  text-align: justify;
+}
+
+/* Icône des réseaux sociaux */
+.sm {
+  height: 67px !important;
+  display: block;
+  margin-top: 20px;
+  margin: auto;
+  margin-top: 36px;
+}
+
+.linkSold {
+  text-align: center;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.linkSold img {
+  height : 86px; 
+  width : 86px;
+}
+
+footer {
+  background-color: black;
+  border-top: 1px solid #777777;
+  text-align: center;
+}
+
+footer img {
+  width: 231px;
+}
+
+#bckprl {
+  background-image: url('img/prlx.png');
+  height: 60vh; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 650px) {
+
+  nav {
+    height: 44px;
+    position: fixed;
+}
+  #logoTop {
+    height: 24px;
+    width: 185;
+    padding-left: 9%;
+  }
+
+  #icons {
+    display: block;
+    position: absolute;
+    right: 9%;
+    top: 10px;
+    font-size: 28px;
+    color: white;
+    z-index: 1003;
+    margin-top: 0;
+}
+
+  #icons:before {
+    content: "\2630"; /* Icône burger */
+  }
+
+  .active #icons:before {
+    content: "\2715"; /* Icône croix */
+  }
+
+  /* Voile noir */
+  .overlay {
+    position: fixed;
+    top: 50px; /* Ne recouvre pas la navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 50px); /* Prend tout sauf la navbar */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1001;
+    display: none; /* Caché par défaut */
+  }
+
+  #citation {
+    margin-top: 100%;
+  }
+
+  /* Menu latéral à droite (collé sous la navbar) */
+  nav ul {
+    position: fixed;
+    right: -100%; /* Début hors écran */
+    top: 44px; /* Hauteur de la navbar -> il reste collé */
+    height: calc(100vh - 50px); /* Prend toute la hauteur sous la navbar */
+    flex-direction: column;
+    background: black;
+    width: 50%;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    padding-top: 20px;
+    z-index: 1002;
+  }
+
+  #hero {
+    font-size: 20px;
+  }
+
+  nav li {
+    padding: 3px 0;
+    margin-bottom: -32px;
+  }
+
+  /* Quand le menu est actif */
+  nav.active ul {
+    right: 0;
+    padding-right: 0;
+  }
+
+  /* Affichage du voile noir uniquement quand le menu est actif */
+  nav.active + .overlay {
+    display: block;
+  }
+
+.title {
+  margin-bottom: 0;
+}  
+
+
+#citation h1 {
+  font-size: 16px;
+  margin-top: 18px;
+}
+
+
+.profile-img {
+  width: 199px;
+  height: auto;
+}
+
+  /* Texte + icône */
+.txt {
+  max-width: 784px;
+  font-weight: bolder;
+  flex-grow: 1;
+  padding-left: 0;
+  text-align: justify;
+  font-size: 20px;
+  padding-right: 9%;
+  padding-left: 9%;
+  width: auto;
+}
+
+#book {
+  margin-top: 19%;
+  margin-bottom: 9%;
+}
+
+.content {
+  display: block;
+  align-items: center;
+  justify-content: space-between; /* Image à gauche, texte à droite */
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  padding-left: 0%;
+  justify-items: center;
+}
+
+#acheter .txt p {
+  margin-top: 9%;
+}
+
+.linkSold {
+  display: grid;
+  margin-top: 9%;
+}
+}
+
+
